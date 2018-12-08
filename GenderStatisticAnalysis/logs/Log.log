@@ -1,0 +1,38 @@
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected outputs for namedOutput 'ListCountries'
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output ((null), United States) for namedOutput 'ListCountries' at position 0.
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output ((null), United States) for namedOutput 'ListCountries' at position 1.
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output ((null), United States) for namedOutput 'ListCountries' at position 2.
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected outputs for namedOutput 'DateCountries'
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output (1960, United States) for namedOutput 'DateCountries' at position 0.
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output (2015, United States) for namedOutput 'DateCountries' at position 1.
+2018-12-07 18:27:31 ERROR TestDriver:57 - Missing expected output (2016, United States) for namedOutput 'DateCountries' at position 2.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'ListCountries'
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 0.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 1.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 2.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'DateCountries'
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output (1960, United States) for PathOutput 'DateCountries' at position 0.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output (2015, United States) for PathOutput 'DateCountries' at position 1.
+2018-12-07 18:32:39 ERROR TestDriver:57 - Missing expected output (2016, United States) for PathOutput 'DateCountries' at position 2.
+2018-12-07 18:38:22 ERROR TestDriver:57 - Missing expected outputs for namedOutput 'ListCountries'
+2018-12-07 18:38:22 ERROR TestDriver:57 - Missing expected output ((null), United States) for namedOutput 'ListCountries' at position 0.
+2018-12-07 18:38:22 ERROR TestDriver:57 - Missing expected outputs for namedOutput 'DateCountries'
+2018-12-07 18:38:22 ERROR TestDriver:57 - Missing expected output (1960, United States) for namedOutput 'DateCountries' at position 0.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'ListCountries'
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 0.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 1.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 2.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'DateCountries'
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output (1960, United States) for PathOutput 'DateCountries' at position 0.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output (2015, United States) for PathOutput 'DateCountries' at position 1.
+2018-12-07 18:48:41 ERROR TestDriver:57 - Missing expected output (2016, United States) for PathOutput 'DateCountries' at position 2.
+2018-12-07 18:50:59 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'ListCountries'
+2018-12-07 18:50:59 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 0.
+2018-12-07 18:50:59 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'DateCountries'
+2018-12-07 18:50:59 ERROR TestDriver:57 - Missing expected output (1960, United States) for PathOutput 'DateCountries' at position 0.
+2018-12-07 18:52:21 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'ListCountries'
+2018-12-07 18:52:21 ERROR TestDriver:57 - Missing expected output ((null), United States) for PathOutput 'ListCountries' at position 0.
+2018-12-07 18:52:21 ERROR TestDriver:57 - Missing expected outputs for PathOutput 'DateCountries'
+2018-12-07 18:52:21 ERROR TestDriver:57 - Missing expected output (1960, United States) for PathOutput 'DateCountries' at position 0.
+2018-12-07 18:54:52 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-12-07 18:55:50 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
