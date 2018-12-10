@@ -16,8 +16,6 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import com.revature.map.YearMapper;
 import com.revature.reduce.YearReducer;
 
-//hadoop jar target/GenderStatisticAnalysis.jar com.revature.GenderStatisticAnalysis HData/gender-stats-data/Gender_StatsData.csv output-mapper-test
-
 public class GenderStatisticAnalysis {
 	
 	public static void main(String[] args) 

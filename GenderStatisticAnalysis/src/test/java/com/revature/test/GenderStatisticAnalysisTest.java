@@ -45,9 +45,9 @@ public class GenderStatisticAnalysisTest {
 	
 	@Test
 	public void testMapper() throws IOException {
-		mapDriver.withInput(new LongWritable(1), new Text("United States,USA,,SE.TER.CMPL.FE.ZS,20,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20,20"));
+		mapDriver.withInput(new LongWritable(1), new Text("United States,USA,,SE.TER.CMPL.FE.ZS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20,,,,,,,,,,,,,,,,,20,20"));
 		
-		mapDriver.withOutput(new IntWritable(1960), new Text("United States"));
+		mapDriver.withOutput(new IntWritable(1998), new Text("United States"));
 		mapDriver.withOutput(new IntWritable(2015), new Text("United States"));
 		mapDriver.withOutput(new IntWritable(2016), new Text("United States"));
 		
