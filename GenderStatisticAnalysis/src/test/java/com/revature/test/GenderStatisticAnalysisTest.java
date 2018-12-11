@@ -17,11 +17,11 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.revature.map.YearMapper;
-import com.revature.reduce.YearReducer;
+import com.revature.map.FGradLessThan30Mapper;
+import com.revature.reduce.FGradLessThan30Reducer;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(YearReducer.class)
+@PrepareForTest(FGradLessThan30Reducer.class)
 public class GenderStatisticAnalysisTest {
 	
 	private MapDriver<LongWritable, Text, IntWritable, Text> mapDriver;
@@ -30,11 +30,11 @@ public class GenderStatisticAnalysisTest {
 	
 	@Before
 	public void setup() {
-		YearMapper mapper = new YearMapper();
+		FGradLessThan30Mapper mapper = new FGradLessThan30Mapper();
 		mapDriver = new MapDriver<>();
 		mapDriver.setMapper(mapper);
 		
-		YearReducer reducer = new YearReducer();
+		FGradLessThan30Reducer reducer = new FGradLessThan30Reducer();
 		reduceDriver = new ReduceDriver<>();
 		reduceDriver.setReducer(reducer);
 		
@@ -54,6 +54,9 @@ public class GenderStatisticAnalysisTest {
 		mapDriver.runTest();
 	}
 	
+	/**
+	 * The reducer uses MultipleOutputs
+	 */
 	@Test
 	public void testReducer() throws IOException {
 		List<Text> values = new ArrayList<>();
@@ -67,6 +70,9 @@ public class GenderStatisticAnalysisTest {
 		reduceDriver.runTest();
 	}
 	
+	/**
+	 * MapReduceDriver does not work with MultipleOutputs (known issue)
+	 */
 //	@Test
 //	public void testMapReducer() throws IOException {
 //		mapReduceDriver.withInput(new Pair<LongWritable, Text>(new LongWritable(1), new Text("United States,USA,,SE.TER.CMPL.FE.ZS,20,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,20,20")));

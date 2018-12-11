@@ -7,7 +7,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class YearMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
+public class FGradLessThan30Mapper extends Mapper<LongWritable, Text, IntWritable, Text> {
 	
 	@Override
 	public void map(LongWritable key, Text value, Context context) 

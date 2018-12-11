@@ -13,17 +13,17 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-import com.revature.map.YearMapper;
-import com.revature.reduce.YearReducer;
+import com.revature.map.FGradLessThan30Mapper;
+import com.revature.reduce.FGradLessThan30Reducer;
 
-public class GenderStatisticAnalysis {
+public class FGradLessThan30 {
 	
 	public static void main(String[] args) 
 			throws IOException, InterruptedException, ClassNotFoundException {
 		
 		if (args.length != 2) {
 			System.out.printf(
-					"Usage: GenderStatisticAnalysis <input dir> <output dir>\n");
+					"Usage: com.revature.FGradLessThan30 <input dir> <output dir>\n");
 			System.exit(-1);
 		}
 		
@@ -31,14 +31,14 @@ public class GenderStatisticAnalysis {
 		
 		Job job = Job.getInstance(conf);
 		
-		job.setJarByClass(GenderStatisticAnalysis.class);
+		job.setJarByClass(FGradLessThan30.class);
 		job.setJobName("Gender Statistic Analysis");
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
-		job.setMapperClass(YearMapper.class);
-		job.setReducerClass(YearReducer.class);
+		job.setMapperClass(FGradLessThan30Mapper.class);
+		job.setReducerClass(FGradLessThan30Reducer.class);
 		
 		job.setOutputKeyClass(IntWritable.class);
 		job.setOutputValueClass(Text.class);
