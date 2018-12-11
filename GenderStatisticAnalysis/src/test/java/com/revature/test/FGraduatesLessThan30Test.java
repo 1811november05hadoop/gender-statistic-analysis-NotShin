@@ -17,12 +17,12 @@ import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.revature.map.FGradLessThan30Mapper;
-import com.revature.reduce.FGradLessThan30Reducer;
+import com.revature.map.FGraduatesLessThan30Mapper;
+import com.revature.reduce.FGraduatesLessThan30Reducer;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(FGradLessThan30Reducer.class)
-public class FGradLessThan30Test {
+@PrepareForTest(FGraduatesLessThan30Reducer.class)
+public class FGraduatesLessThan30Test {
 	
 	private MapDriver<LongWritable, Text, IntWritable, Text> mapDriver;
 	private ReduceDriver<IntWritable, Text, IntWritable, Text> reduceDriver;
@@ -30,11 +30,11 @@ public class FGradLessThan30Test {
 	
 	@Before
 	public void setup() {
-		FGradLessThan30Mapper mapper = new FGradLessThan30Mapper();
+		FGraduatesLessThan30Mapper mapper = new FGraduatesLessThan30Mapper();
 		mapDriver = new MapDriver<>();
 		mapDriver.setMapper(mapper);
 		
-		FGradLessThan30Reducer reducer = new FGradLessThan30Reducer();
+		FGraduatesLessThan30Reducer reducer = new FGraduatesLessThan30Reducer();
 		reduceDriver = new ReduceDriver<>();
 		reduceDriver.setReducer(reducer);
 		

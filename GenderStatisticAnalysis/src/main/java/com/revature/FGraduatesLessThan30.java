@@ -13,10 +13,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-import com.revature.map.FGradLessThan30Mapper;
-import com.revature.reduce.FGradLessThan30Reducer;
+import com.revature.map.FGraduatesLessThan30Mapper;
+import com.revature.reduce.FGraduatesLessThan30Reducer;
 
-public class FGradLessThan30 {
+public class FGraduatesLessThan30 {
 	
 	public static void main(String[] args) 
 			throws IOException, InterruptedException, ClassNotFoundException {
@@ -31,14 +31,14 @@ public class FGradLessThan30 {
 		
 		Job job = Job.getInstance(conf);
 		
-		job.setJarByClass(FGradLessThan30.class);
+		job.setJarByClass(FGraduatesLessThan30.class);
 		job.setJobName("Gender Statistic Analysis");
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
-		job.setMapperClass(FGradLessThan30Mapper.class);
-		job.setReducerClass(FGradLessThan30Reducer.class);
+		job.setMapperClass(FGraduatesLessThan30Mapper.class);
+		job.setReducerClass(FGraduatesLessThan30Reducer.class);
 		
 		job.setOutputKeyClass(IntWritable.class);
 		job.setOutputValueClass(Text.class);

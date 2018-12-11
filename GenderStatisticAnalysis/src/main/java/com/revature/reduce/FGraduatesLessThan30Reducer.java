@@ -13,7 +13,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 
-public class FGradLessThan30Reducer extends Reducer<IntWritable, Text, IntWritable, Text> {
+public class FGraduatesLessThan30Reducer extends Reducer<IntWritable, Text, IntWritable, Text> {
 	MultipleOutputs<IntWritable, Text> mos;
 	public static Set<String> uniqueCountries = new TreeSet<>();
 	
