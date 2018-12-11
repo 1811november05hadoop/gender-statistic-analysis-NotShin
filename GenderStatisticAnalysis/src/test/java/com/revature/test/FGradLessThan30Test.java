@@ -22,7 +22,7 @@ import com.revature.reduce.FGradLessThan30Reducer;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(FGradLessThan30Reducer.class)
-public class GenderStatisticAnalysisTest {
+public class FGradLessThan30Test {
 	
 	private MapDriver<LongWritable, Text, IntWritable, Text> mapDriver;
 	private ReduceDriver<IntWritable, Text, IntWritable, Text> reduceDriver;
