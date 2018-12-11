@@ -21,7 +21,7 @@ public class FGraduatesLessThan30Mapper extends Mapper<LongWritable, Text, IntWr
 				values[i] = values[i].replace("\"", "").trim();
 			}
 			
-			for(int i = 32; i < values.length; i++) {
+			for(int i = 42; i < values.length; i++) {
 				if (!values[i].equals("") && Double.parseDouble(values[i]) < 30) {
 					context.write(new IntWritable(1956 + i), new Text(values[0]));
 				}

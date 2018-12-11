@@ -8,7 +8,7 @@ import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class FEducationAverageIncreaseUS2000Reducer extends Reducer<NullWritable, DoubleWritable, NullWritable, DoubleWritable> {
+public class FEducationUS2000GrossPercentageReducer extends Reducer<NullWritable, DoubleWritable, NullWritable, DoubleWritable> {
 	
 	@Override
 	public void reduce(NullWritable key, Iterable<DoubleWritable> values, Context context) 
@@ -19,13 +19,13 @@ public class FEducationAverageIncreaseUS2000Reducer extends Reducer<NullWritable
 		
 		for(DoubleWritable value: values) {
 			if(grossPercentage.compareTo(new DoubleWritable(0)) != 0) {
-				yearlyIncrease.add(new Double(value.get() - grossPercentage.get()));
+				yearlyIncrease.add(new Double(grossPercentage.get() - value.get()));
 				grossPercentage.set(value.get());
 			} else {
 				grossPercentage.set(value.get());
 			}
 		}
-		
+		//3.15755652173913
 		for(Double val : yearlyIncrease) {
 			context.write(NullWritable.get(), new DoubleWritable(val.doubleValue()));
 		}

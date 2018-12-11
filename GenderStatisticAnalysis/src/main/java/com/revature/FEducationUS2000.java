@@ -10,10 +10,11 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import com.revature.map.FEducationAverageIncreaseUS2000Mapper;
-import com.revature.reduce.FEducationAverageIncreaseUS2000Reducer;
+import com.revature.map.FEducationUS2000Mapper;
+import com.revature.reduce.FEducationUS2000AverageIncreaseReducer;
+import com.revature.reduce.FEducationUS2000GrossPercentageReducer;
 
-public class FEducationAverageIncreaseUS2000 {
+public class FEducationUS2000 {
 	
 	public static void main(String[] args) 
 			throws IOException, InterruptedException, ClassNotFoundException {
@@ -26,13 +27,14 @@ public class FEducationAverageIncreaseUS2000 {
 		
 		Job job = Job.getInstance(conf, "FEducationAverageIncreaseUS2000");
 		
-		job.setJarByClass(FEducationAverageIncreaseUS2000.class);
+		job.setJarByClass(FEducationUS2000.class);
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
-		job.setMapperClass(FEducationAverageIncreaseUS2000Mapper.class);
-		job.setReducerClass(FEducationAverageIncreaseUS2000Reducer.class);
+		job.setMapperClass(FEducationUS2000Mapper.class);
+		job.setCombinerClass(FEducationUS2000GrossPercentageReducer.class);
+		job.setReducerClass(FEducationUS2000AverageIncreaseReducer.class);
 		
 		job.setOutputKeyClass(NullWritable.class);
 		job.setOutputValueClass(DoubleWritable.class);

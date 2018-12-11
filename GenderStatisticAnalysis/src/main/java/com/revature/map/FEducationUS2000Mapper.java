@@ -8,7 +8,7 @@ import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class FEducationAverageIncreaseUS2000Mapper extends Mapper<LongWritable, Text, NullWritable, DoubleWritable> {
+public class FEducationUS2000Mapper extends Mapper<LongWritable, Text, NullWritable, DoubleWritable> {
 	
 	@Override
 	public void map(LongWritable key, Text value, Context context) 
@@ -24,7 +24,7 @@ public class FEducationAverageIncreaseUS2000Mapper extends Mapper<LongWritable, 
 				values[i] = values[i].replace("\"", "").trim();
 			}
 			
-			for(int i = 34; i < values.length; i ++) {
+			for(int i = 44; i < values.length; i ++) {
 				if(!values[i].equals("")) {
 					context.write(NullWritable.get(), new DoubleWritable(Double.parseDouble(values[i])));
 				}
