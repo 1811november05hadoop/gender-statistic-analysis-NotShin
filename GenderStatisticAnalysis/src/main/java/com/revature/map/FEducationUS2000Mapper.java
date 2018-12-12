@@ -24,7 +24,8 @@ public class FEducationUS2000Mapper extends Mapper<LongWritable, Text, NullWrita
 				values[i] = values[i].replace("\"", "").trim();
 			}
 			
-			for(int i = 44; i < values.length; i ++) {
+			//for(int i = values.length - 1; i >= 44; i--) {
+			for(int i = 44; i < values.length; i++) {
 				if(!values[i].equals("")) {
 					context.write(NullWritable.get(), new DoubleWritable(Double.parseDouble(values[i])));
 				}
