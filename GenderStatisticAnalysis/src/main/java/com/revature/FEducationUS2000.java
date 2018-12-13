@@ -41,6 +41,5 @@ public class FEducationUS2000 {
 		
 		boolean success = job.waitForCompletion(true);
 		System.exit(success ? 0 : 1);
-		
 	}
 }

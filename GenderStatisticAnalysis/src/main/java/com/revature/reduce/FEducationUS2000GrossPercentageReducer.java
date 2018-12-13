@@ -19,7 +19,7 @@ public class FEducationUS2000GrossPercentageReducer extends Reducer<NullWritable
 		
 		for(DoubleWritable value: values) {
 			if(grossPercentage.compareTo(new DoubleWritable(0)) != 0) {
-				yearlyIncrease.add(new Double(value.get() - grossPercentage.get()));
+				yearlyIncrease.add(new Double(grossPercentage.get() - value.get()));
 				grossPercentage.set(value.get());
 			} else {
 				grossPercentage.set(value.get());

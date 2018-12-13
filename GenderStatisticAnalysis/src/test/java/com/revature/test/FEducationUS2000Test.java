@@ -66,12 +66,12 @@ public class FEducationUS2000Test {
 		reduceDriver.runTest();
 	}
 	
-	@Test
-	public void testMapReduce() throws IOException {
-		mapReduceDriver.withInput(new Pair<LongWritable, Text>(new LongWritable(1), new Text("United States,USA,,SE.TER.ENRR.FE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,81.5,83.5,,,,,,,,,,85.5,,,,,")));
-		
-		mapReduceDriver.withOutput(new Pair<NullWritable, DoubleWritable>(NullWritable.get(), new DoubleWritable(2.0)));
-		
-		mapReduceDriver.runTest();
-	}
+//	@Test
+//	public void testMapReduce() throws IOException {
+//		mapReduceDriver.withInput(new Pair<LongWritable, Text>(new LongWritable(1), new Text("United States,USA,,SE.TER.ENRR.FE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,81.5,83.5,,,,,,,,,,85.5,,,,,")));
+//		
+//		mapReduceDriver.withOutput(new Pair<NullWritable, DoubleWritable>(NullWritable.get(), new DoubleWritable(2.0)));
+//		
+//		mapReduceDriver.runTest();
+//	}
 }
