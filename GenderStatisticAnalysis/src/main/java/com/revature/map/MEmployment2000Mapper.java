@@ -27,7 +27,7 @@ public class MEmployment2000Mapper extends Mapper<LongWritable, Text, Text, Text
 			throws IOException, InterruptedException {
 
 		String line = value.toString();
-		List<Double> percentFemaleLaborForce = new ArrayList<>();
+		List<Double> percentMaleLaborForce = new ArrayList<>();
 		List<String> percentChangeLaborForce = new ArrayList<>();
 
 		if(line.contains("SL.TLF.TOTL.FE.ZS")) {
@@ -40,15 +40,15 @@ public class MEmployment2000Mapper extends Mapper<LongWritable, Text, Text, Text
 			
 			for(int i = 44; i < values.length; i++) {
 				if(!values[i].equals("")) {
-					percentFemaleLaborForce.add(Double.parseDouble(values[i]));
+					percentMaleLaborForce.add(100 - Double.parseDouble(values[i]));
 				}
 			}
 			
-			if(percentFemaleLaborForce.size() == 17) {
+			if(percentMaleLaborForce.size() == 17) {
 				for(int i = 1; i < 17; i++) {
 					percentChangeLaborForce.add(String.format("%7s", String.format("%.2f%%", 
-							percentFemaleLaborForce.get(i).doubleValue() 
-							- percentFemaleLaborForce.get(i - 1).doubleValue())));
+							percentMaleLaborForce.get(i).doubleValue() 
+							- percentMaleLaborForce.get(i - 1).doubleValue())));
 				}
 				
 				context.write(new Text(String.format("%-50s", values[0])), 
