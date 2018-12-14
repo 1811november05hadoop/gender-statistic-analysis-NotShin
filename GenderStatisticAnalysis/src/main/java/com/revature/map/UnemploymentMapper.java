@@ -16,7 +16,23 @@ public class UnemploymentMapper extends Mapper<LongWritable, Text, Text, DoubleA
 			throws IOException, InterruptedException {
 
 		String line = value.toString();
-
+		
+		/* SL.UEM.ADVN.FE.ZS
+		 * Unemployment with advanced education, female
+		 * (% of female labor force with advanced education)
+		 * 
+		 * SL.UEM.ADVN.MA.ZS
+		 * Unemployment with advanced education, male
+		 * (% of male labor force with advanced education) 
+		 * 
+		 * SL.UEM.TOTL.FE.NE.ZS
+		 * Unemployment, female
+		 * (% of female labor force) (national estimate)
+		 * 
+		 * SL.UEM.TOTL.MA.NE.ZS
+		 * Unemployment, male
+		 * (% of male labor force) (national estimate)
+		 */
 		if(line.contains("United States") && 
 				(line.contains("SL.UEM.ADVN.FE.ZS") | 
 						line.contains("SL.UEM.ADVN.MA.ZS") | 
@@ -25,6 +41,7 @@ public class UnemploymentMapper extends Mapper<LongWritable, Text, Text, DoubleA
 
 			String[] values = value.toString().split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 
+			// Clean the data
 			for(int i = 0; i < values.length; i++) {
 				values[i] = values[i].replace("\"", "").trim();
 			}
@@ -33,7 +50,7 @@ public class UnemploymentMapper extends Mapper<LongWritable, Text, Text, DoubleA
 			DoubleArrayWritable doubleArrayWritable = new DoubleArrayWritable();
 			DoubleWritable[] data = new DoubleWritable[32];;
 			
-			// 29 = 1985
+			// 29 to values.length = 1985 to 2016
 			for(int i = 29; i < values.length; i++) {
 				data[i-29] = new DoubleWritable(Double.parseDouble(values[i]));
 			}

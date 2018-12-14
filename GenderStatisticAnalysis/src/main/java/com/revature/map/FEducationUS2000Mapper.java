@@ -20,10 +20,12 @@ public class FEducationUS2000Mapper extends Mapper<LongWritable, Text, NullWrita
 			
 			String[] values = value.toString().split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
 			
+			// Clean the data
 			for(int i = 0; i < values.length; i++) {
 				values[i] = values[i].replace("\"", "").trim();
 			}
 			
+			// 44 to values.length = 2000 to 2016
 			for(int i = 44; i < values.length; i++) {
 				if(!values[i].equals("")) {
 					context.write(NullWritable.get(), new DoubleWritable(Double.parseDouble(values[i])));
