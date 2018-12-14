@@ -20,12 +20,13 @@ public class FEducationUS2000 {
 			throws IOException, InterruptedException, ClassNotFoundException {
 		
 		if(args.length != 2) {
-			System.err.println();
+			System.out.printf("Usage: com.revature.FEducationUS2000 <input dir> <output dir>\n");
+			System.exit(-1);
 		}
 		
 		Configuration conf = new Configuration();
 		
-		Job job = Job.getInstance(conf, "FEducationAverageIncreaseUS2000");
+		Job job = Job.getInstance(conf, "FEducationUS2000");
 		
 		job.setJarByClass(FEducationUS2000.class);
 		

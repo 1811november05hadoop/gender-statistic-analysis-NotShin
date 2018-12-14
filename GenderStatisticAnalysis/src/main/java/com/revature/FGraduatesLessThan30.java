@@ -22,17 +22,15 @@ public class FGraduatesLessThan30 {
 			throws IOException, InterruptedException, ClassNotFoundException {
 		
 		if (args.length != 2) {
-			System.out.printf(
-					"Usage: com.revature.FGradLessThan30 <input dir> <output dir>\n");
+			System.out.printf("Usage: com.revature.FGraduatesLessThan30 <input dir> <output dir>\n");
 			System.exit(-1);
 		}
 		
 		Configuration conf = new Configuration();
 		
-		Job job = Job.getInstance(conf);
+		Job job = Job.getInstance(conf, "FGraduatesLessThan30");
 		
 		job.setJarByClass(FGraduatesLessThan30.class);
-		job.setJobName("Gender Statistic Analysis");
 		
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));

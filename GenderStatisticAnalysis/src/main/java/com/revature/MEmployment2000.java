@@ -17,7 +17,8 @@ public class MEmployment2000 {
 			throws IOException, InterruptedException, ClassNotFoundException {
 		
 		if(args.length != 2) {
-			System.err.println();
+			System.out.printf("Usage: com.revature.MEmployment2000 <input dir> <output dir>\n");
+			System.exit(-1);
 		}
 		
 		Configuration conf = new Configuration();
